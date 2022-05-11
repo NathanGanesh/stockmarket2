@@ -10,9 +10,7 @@ class FraudCheckHistory(
     @Id
     val id: Long? = null
 ) {
-
-    private val customerId: Int? = null
-    private val isFraudster: Boolean? = null
-    private val createdAt: LocalDateTime? = null
-
+    var customerId: Int? = null
+    var isFraudster: Boolean? = null
+    var createdAt: LocalDateTime? = null
 }

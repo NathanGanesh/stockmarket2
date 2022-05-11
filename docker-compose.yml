@@ -1,28 +1,28 @@
 services:
   postgres:
-    container_name: stockmarketpostgrescustomer
+    container_name: stockmarketpostgrescustomer2
     image: postgres
     environment:
       POSTGRES_USER: stockmarket
       POSTGRES_PASSWORD: stockmarket
       PGDATA: /data/postgrescustomer
     volumes:
-      - postgres:/data/postgrescustomer
+      - postgres:/data/postgrescust
     ports:
-      - "5432:5432"
+      - "5434:5432"
     networks:
       - postgres
     restart: unless-stopped
 
   postgres-fraud:
-    container_name: stockmarketpostgresfraud
+    container_name: stockmarketpostgresfraud2
     image: postgres
     environment:
       POSTGRES_USER: stockmarket
       POSTGRES_PASSWORD: stockmarket
-      PGDATA: /data/postgresfraud
+      PGDATA: /data/postgresfraud2
     volumes:
-      - postgres:/data/postgresfraud
+      - postgres:/data/postgresfra
     ports:
       - "5433:5432"
     networks:
