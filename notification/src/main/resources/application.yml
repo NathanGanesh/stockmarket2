@@ -1,0 +1,22 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: notification
+  datasource:
+    password: stockmarket
+    url: jdbc:postgresql://localhost:5435/notification
+    username: stockmarket
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+  profiles:
+    active: native
