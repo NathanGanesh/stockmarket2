@@ -1,13 +1,13 @@
-package com.nathan
+package com.stockmarketfraud
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.autoconfigure.domain.EntityScan
 import org.springframework.boot.runApplication
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient
 import org.springframework.context.annotation.ComponentScan
 
 @SpringBootApplication
-@ComponentScan(basePackages = ["com.nathan.*"])
-@EntityScan(basePackages = ["com.nathan.*"])
+@EnableEurekaClient
 class FraudApplication
 
 fun main(args: Array<String>) {

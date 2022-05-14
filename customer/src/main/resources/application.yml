@@ -9,9 +9,18 @@ spring:
     username: stockmarket
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+  profiles:
+    active: native
+

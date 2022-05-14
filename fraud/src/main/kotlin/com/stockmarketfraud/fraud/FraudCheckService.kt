@@ -1,4 +1,4 @@
-package com.nathan.fraud
+package com.stockmarketfraud.fraud
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service

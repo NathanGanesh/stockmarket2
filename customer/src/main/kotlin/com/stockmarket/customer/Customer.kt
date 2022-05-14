@@ -15,7 +15,7 @@ class Customer(
         generator = "customer_id_sequence"
     )
     @Id
-    val id: Long? = null
+    val id: Int? = null
     var email: String? = null
     var firstName: String? = null
     var lastName: String? = null

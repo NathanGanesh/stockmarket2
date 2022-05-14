@@ -1,5 +1,6 @@
-package com.nathan.fraud
+package com.stockmarketfraud.fraud
 
+import com.nathan.clients.fraud.FraudCheckResponse
 import lombok.extern.slf4j.Slf4j
 import org.slf4j.LoggerFactory
 import org.springframework.web.bind.annotation.*
