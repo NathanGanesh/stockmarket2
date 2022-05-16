@@ -10,9 +10,8 @@ import lombok.NoArgsConstructor
 @NoArgsConstructor
 @AllArgsConstructor
 data class NotificationRequest(
-
-    val message: String? = ""
-    val toCustomerId: Int? = null
+    val message: String? = "",
+    val toCustomerId: Int? = null,
     val toCustomerName: String? = ""
 ) {
 

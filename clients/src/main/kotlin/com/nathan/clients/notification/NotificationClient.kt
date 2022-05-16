@@ -3,8 +3,8 @@ package com.nathan.clients.notification
 import org.springframework.cloud.openfeign.FeignClient
 import org.springframework.web.bind.annotation.PostMapping
 
-@FeignClient("notification")
+@FeignClient("notification", path = "api/v1/notification")
 interface NotificationClient {
-    @PostMapping("api/v1/notifcation")
+    @PostMapping()
     fun sendNotification(notificationRequest: NotificationRequest)
 }
