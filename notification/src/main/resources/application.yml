@@ -20,3 +20,10 @@ eureka:
     instance-id: ${spring.application.name}:${random.uuid}
   profiles:
     active: native
+rabbitmq:
+  exchanges:
+    internal: internal.exchange
+  queues:
+    notification: notification.queue
+  routing-keys:
+    internal-notification: internal.notification.routing-key

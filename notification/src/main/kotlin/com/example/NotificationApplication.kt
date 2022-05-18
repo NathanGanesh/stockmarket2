@@ -5,7 +5,8 @@ import org.springframework.boot.runApplication
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient
 import org.springframework.cloud.openfeign.EnableFeignClients
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = ["com.example.notification", "com.example.amqp"]
+ )
 @EnableEurekaClient
 class NotificationApplication
 

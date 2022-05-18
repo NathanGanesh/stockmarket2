@@ -8,11 +8,11 @@
         <version>2.6.7</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.nathan</groupId>
-    <artifactId>clients</artifactId>
+    <groupId>com.example</groupId>
+    <artifactId>rabbitamqp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>clients</name>
-    <description>clients</description>
+    <name>rabbitamqp</name>
+    <description>rabbitamqp</description>
     <properties>
         <java.version>16</java.version>
         <kotlin.version>1.6.21</kotlin.version>
@@ -21,6 +21,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+            <version>2.6.7</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
@@ -36,22 +41,10 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-            <version>3.1.2</version>
-        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-sleuth-zipkin</artifactId>
-            <version>3.1.2</version>
-        </dependency>
-
     </dependencies>
 
     <build>
