@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan
 
 
 @EnableEurekaClient
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = ["com.stockmarket.customer", "com.example.rabbitamqp"])
 @EnableFeignClients(
     basePackages = ["com.nathan.clients"]
 )

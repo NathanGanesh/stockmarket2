@@ -17,6 +17,15 @@
         <java.version>16</java.version>
         <kotlin.version>1.6.21</kotlin.version>
     </properties>
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--                <version>2.6.7 </version>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -76,6 +85,12 @@
         <dependency>
             <groupId>com.nathan</groupId>
             <artifactId>clients</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>rabbitamqp</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

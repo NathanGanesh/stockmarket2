@@ -10,6 +10,7 @@
     </parent>
     <groupId>com.stockmarket</groupId>
     <artifactId>customer</artifactId>
+    <packaging>jar</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <name>customer</name>
     <description>customer</description>
@@ -17,6 +18,9 @@
         <java.version>16</java.version>
         <kotlin.version>1.6.21</kotlin.version>
     </properties>
+
+
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -89,6 +93,30 @@
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>rabbitamqp</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-allopen</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-noarg</artifactId>
+                <version>1.6.10</version>
+            </dependency>
     </dependencies>
 
     <build>
@@ -120,27 +148,6 @@
                             <option>all-open:annotation=javax.persistence.Embeddable</option>
                         </pluginOptions>
                     </configuration>
-
-                    <dependencies>
-
-                        <dependency>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.springframework.boot</groupId>
-                            <artifactId>spring-boot-starter-test</artifactId>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.jetbrains.kotlin</groupId>
-                            <artifactId>kotlin-maven-allopen</artifactId>
-                            <version>${kotlin.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.jetbrains.kotlin</groupId>
-                            <artifactId>kotlin-maven-noarg</artifactId>
-                        </dependency>
-                    </dependencies>
                 </plugin>
             </plugins>
         </pluginManagement>

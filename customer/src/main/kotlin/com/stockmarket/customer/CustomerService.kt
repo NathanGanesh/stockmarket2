@@ -1,20 +1,19 @@
 package com.stockmarket.customer
 
-import com.nathan.clients.fraud.FraudCheckResponse
+import com.example.rabbitamqp.RabbitMqMessageProducer
 import com.nathan.clients.fraud.FraudClient
-import com.nathan.clients.notification.NotificationClient
 import com.nathan.clients.notification.NotificationRequest
+import lombok.AllArgsConstructor
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
-import org.springframework.web.client.RestTemplate
-import org.springframework.web.client.getForEntity
 
 @Service
-class CustomerService(
+class CustomerService (
     private val customerRepository: CustomerRepository,
    private val fraudClient: FraudClient,
-   private val notificationClient: NotificationClient
+    private val rabbitMQMessageProducer: RabbitMqMessageProducer
 ) {
+
     fun registerCustomer(customerRegistrationDto: CustomerRegistrationDto) {
         val customer: Customer = Customer()
         customer.email = customerRegistrationDto.email
@@ -26,11 +25,15 @@ class CustomerService(
                     if(fraudCheckResponse.isFraudster == true){
                         throw IllegalStateException("fraudster")
                     }else{
-                        notificationClient.sendNotification(NotificationRequest(
+                        val notification = NotificationRequest(
                             message = "welcome to stockmarket " + customer.firstName,
                             toCustomerId = it1,
                             toCustomerName = customer.email
-                        ))
+                        )
+                        rabbitMQMessageProducer.publish(notification,
+                            "internal.exchange",
+                        "internal.notification.routing-key")
+
                     }
                 } }
             }

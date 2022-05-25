@@ -15,11 +15,15 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
+  rabbitmq:
+    addresses: localhost:5672
 eureka:
   instance:
     instance-id: ${spring.application.name}:${random.uuid}
   profiles:
     active: native
+
+
 rabbitmq:
   exchanges:
     internal: internal.exchange

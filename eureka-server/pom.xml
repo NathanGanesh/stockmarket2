@@ -16,6 +16,15 @@
     <properties>
         <java.version>16</java.version>
     </properties>
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--                <version>2.6.7 </version>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

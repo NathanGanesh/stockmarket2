@@ -13,6 +13,8 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>apigt</name>
     <description>apigt</description>
+    <packaging>jar</packaging>
+
     <properties>
         <java.version>16</java.version>
         <kotlin.version>1.6.21</kotlin.version>
@@ -51,7 +53,11 @@
             <artifactId>spring-cloud-sleuth-zipkin</artifactId>
             <version>3.1.2</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-maven-allopen</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -73,13 +79,6 @@
                         <plugin>spring</plugin>
                     </compilerPlugins>
                 </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.jetbrains.kotlin</groupId>
-                        <artifactId>kotlin-maven-allopen</artifactId>
-                        <version>${kotlin.version}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
         </plugins>
     </build>

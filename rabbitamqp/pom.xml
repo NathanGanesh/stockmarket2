@@ -13,10 +13,12 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>rabbitamqp</name>
     <description>rabbitamqp</description>
+    <packaging>jar</packaging>
     <properties>
         <java.version>16</java.version>
         <kotlin.version>1.6.21</kotlin.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
