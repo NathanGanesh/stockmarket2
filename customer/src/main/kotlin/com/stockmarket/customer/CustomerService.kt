@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service
 class CustomerService (
     private val customerRepository: CustomerRepository,
    private val fraudClient: FraudClient,
-    private val rabbitMQMessageProducer: RabbitMqMessageProducer
+   @Autowired private val rabbitMQMessageProducer: RabbitMqMessageProducer
 ) {
 
     fun registerCustomer(customerRegistrationDto: CustomerRegistrationDto) {
