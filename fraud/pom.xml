@@ -12,6 +12,7 @@
     <artifactId>fraud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>fraud</name>
+    <packaging>jar</packaging>
     <description>fraud</description>
 <!--    <build>-->
 <!--        <plugins>-->

@@ -15,6 +15,6 @@ class NotificationService(private val notificationRepo: NotificationRepo) {
         notification.sentAt = LocalDateTime.now()
         notification.sender = "stockmarket"
 
-        notificationRepo.save(notification)
+        notificationRepo.save(notification )
     }
 }

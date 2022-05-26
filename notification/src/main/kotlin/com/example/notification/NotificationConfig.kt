@@ -11,13 +11,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 class NotificationConfig {
     @Value("\${rabbitmq.exchanges.internal}")
-    public val internalExchange: String? = null
+    lateinit var internalExchange:String
 
     @Value("\${rabbitmq.queues.notification}")
-    public val notificationQueue: String? = null
+    lateinit var notificationQueue:String
 
     @Value("\${rabbitmq.routing-keys.internal-notification}")
-    public val internalNotificationRoutingKey: String? = null
+    lateinit var internalNotificationRoutingKey:String
 
     @Bean
     fun internalTopicExchange(): TopicExchange? {
