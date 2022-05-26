@@ -3,12 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.7</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <groupId>com.nathan</groupId>
+        <artifactId>stockmarket2</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.nathan</groupId>
     <artifactId>fraud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>fraud</name>
@@ -43,10 +41,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -89,8 +83,10 @@
             <artifactId>spring-cloud-starter-sleuth</artifactId>
             <version>3.1.2</version>
         </dependency>
-
-
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
     </dependencies>
 
 
@@ -102,48 +98,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.jetbrains.kotlin</groupId>
-                <artifactId>kotlin-maven-plugin</artifactId>
-                <configuration>
-                    <args>
-                        <arg>-Xjsr305=strict</arg>
-                    </args>
-                    <compilerPlugins>
-                        <plugin>spring</plugin>
-                        <plugin>jpa</plugin>
-                        <plugin>all-open</plugin>
-                    </compilerPlugins>
-                    <pluginOptions>
-                        <option>all-open:annotation=com.my.Annotation</option>
-                        <option>all-open:annotation=com.their.AnotherAnnotation</option>
-                        <option>all-open:annotation=javax.persistence.Entity</option>
-                        <option>all-open:annotation=javax.persistence.MappedSuperclass</option>
-                        <option>all-open:annotation=javax.persistence.Embeddable</option>
-                    </pluginOptions>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.projectlombok</groupId>
-                        <artifactId>lombok</artifactId>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.springframework.boot</groupId>
-                        <artifactId>spring-boot-starter-test</artifactId>
-                    </dependency>
-
-                    <dependency>
-                        <groupId>org.jetbrains.kotlin</groupId>
-                        <artifactId>kotlin-maven-allopen</artifactId>
-                        <version>${kotlin.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.jetbrains.kotlin</groupId>
-                        <artifactId>kotlin-maven-noarg</artifactId>
-                        <version>${kotlin.version}</version>
-                    </dependency>
-                </dependencies>
+                <version>2.6.7</version>
             </plugin>
         </plugins>
     </build>
