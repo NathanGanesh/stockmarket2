@@ -3,8 +3,6 @@ package com.stockmarket.customer
 import com.example.rabbitamqp.RabbitMqMessageProducer
 import com.nathan.clients.fraud.FraudClient
 import com.nathan.clients.notification.NotificationRequest
-import lombok.AllArgsConstructor
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 @Service

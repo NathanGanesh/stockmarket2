@@ -12,7 +12,8 @@ import org.springframework.context.annotation.Bean
     scanBasePackages = ["com.example.notification", "com.example.rabbitamqp"]
 )
 @EnableEurekaClient
-class NotificationApplication{
+class NotificationApplication
+//{
 
 
 //@Bean
@@ -23,7 +24,7 @@ class NotificationApplication{
 //        )
 //}
 
-}
+//}
 fun main(args: Array<String>) {
     runApplication<NotificationApplication>(*args)
 }
