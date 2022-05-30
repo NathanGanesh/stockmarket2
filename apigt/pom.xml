@@ -17,6 +17,7 @@
     <properties>
         <java.version>16</java.version>
         <kotlin.version>1.6.21</kotlin.version>
+        <image>ikiddoi/${project.artifactId}:${project.version}</image>
     </properties>
     <dependencies>
         <dependency>
@@ -58,14 +59,69 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>build-docker-image</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.google.cloud.tools</groupId>
+                        <artifactId>jib-maven-plugin</artifactId>
+                        <version>3.2.1</version>
+                        <configuration>
+                        <container>
+                            <mainClass>com.gateway.apigt.ApigtApplication</mainClass>
+                        </container>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
     <build>
         <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
         <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
         <pluginManagement>
             <plugins>
+<!--                <plugin>-->
+<!--                    <groupId>com.google.cloud.tools</groupId>-->
+<!--                    <artifactId>jib-maven-plugin</artifactId>-->
+<!--                    <version>3.2.1</version>-->
+<!--                    <configuration>-->
+<!--                        <container>-->
+<!--                            <mainClass>com.gateway.apigt.ApigtApplication</mainClass>-->
+<!--                        </container>-->
+<!--                        <from>-->
+<!--                            <image>eclipse-temurin:16</image>-->
+<!--                            <platforms>-->
+<!--                                <platform>-->
+<!--                                    <architecture>amd64</architecture>-->
+<!--                                    <os>linux</os>-->
+<!--                                </platform>-->
+<!--                            </platforms>-->
+<!--                        </from>-->
+<!--                        <to>-->
+<!--                            <tags>-->
+<!--                                <tag>latest</tag>-->
+<!--                            </tags>-->
+<!--                        </to>-->
+<!--                    </configuration>-->
+<!--                    <executions>-->
+<!--                        <execution>-->
+<!--                            <phase>package</phase>-->
+<!--                            <goals>-->
+<!--                                <goal>build</goal>-->
+<!--                            </goals>-->
+<!--                        </execution>-->
+<!--                    </executions>-->
+<!--                </plugin>-->
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
+                    <configuration>
+                        <mainClass>com.gateway.apigt.ApigtApplication</mainClass>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.jetbrains.kotlin</groupId>
