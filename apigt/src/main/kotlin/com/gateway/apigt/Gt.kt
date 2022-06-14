@@ -6,8 +6,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient
 
 @SpringBootApplication
 @EnableEurekaClient
-class ApigtApplication
+class Gt
 
 fun main(args: Array<String>) {
-    runApplication<ApigtApplication>(*args)
+    runApplication<Gt>(*args)
 }

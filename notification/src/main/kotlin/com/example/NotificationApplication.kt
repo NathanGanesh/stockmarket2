@@ -7,11 +7,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient
 import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.PropertySource
+import org.springframework.context.annotation.PropertySources
 
 @SpringBootApplication(
     scanBasePackages = ["com.example.notification", "com.example.rabbitamqp"]
 )
 @EnableEurekaClient
+@PropertySources(
+    PropertySource("classpath:clients-kube.properties")
+//    PropertySource("classpath:-" + "${spring.profiles.active }" + ".properties")
+)
 class NotificationApplication
 //{
 

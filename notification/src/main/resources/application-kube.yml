@@ -5,7 +5,7 @@ spring:
     name: notification
   datasource:
     password: stockmarket
-    url: jdbc:postgresql://localhost:5435/notification
+    url: jdbc:postgresql://postgres:5435/notification
     username: stockmarket
   jpa:
     hibernate:
@@ -15,15 +15,17 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
+  zipkin:
+    base-url: http://zipkin:9411
   rabbitmq:
-    addresses: localhost:5672
+    addresses: rabbitmq:5672
 eureka:
-  instance:
-    instance-id: ${spring.application.name}:${random.uuid}
-  profiles:
-    active: native
-  enabled: false
-
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+    enabled: false
 
 rabbitmq:
   exchanges:
